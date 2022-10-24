@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainModel {
+
     public ArrayList<Employee> getEmployeeList() {
         /* Mocking */
         Employee[] employeeArray = {
@@ -12,8 +13,9 @@ public class MainModel {
             new Employee(3, "Fél Elemér", "Szeged", 329),
             new Employee(4, "Rántó Balázs", "Szolnok", 317),
         };
-        ArrayList<Employee> employeeList = 
-        new ArrayList<>(Arrays.asList(employeeArray));
+
+        ArrayList<Employee> employeeList = new ArrayList<>(Arrays.asList(employeeArray));
+        
         return employeeList;
     }
 }

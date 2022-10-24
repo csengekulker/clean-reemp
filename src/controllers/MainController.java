@@ -2,42 +2,50 @@ package controllers;
 
 import java.util.ArrayList;
 import java.util.Vector;
-
 import models.Employee;
 import models.MainModel;
 import views.MainWindow;
 
 public class MainController {
-    MainWindow mainwindow;
+    MainWindow mainWindow;
     MainModel mainModel;
+
     public MainController() {
-        this.mainwindow = new MainWindow();
+        this.mainWindow = new MainWindow();
         this.mainModel = new MainModel();
+
         this.handleEvent();
     }
+
     /* Itt kezeljük az eseményeket */
     public void handleEvent() {
+
         //Exit button
-        this.mainwindow.exitButton
-        .addActionListener(e -> button1());
-        this.mainwindow.loadButton //load button
-        .addActionListener(e -> loadButton());
+        this.mainWindow.exitButton.addActionListener(e -> exit());
+        //load button
+        this.mainWindow.loadButton.addActionListener(e -> loadTable());
     }
+
     /* Ez a kilépésgomb eseménykezelője */
-    public void button1() {
-        System.out.println("Kilépés...");
+    public void exit() {
+
         System.exit(0);
     }
-    public void loadButton() {
-        System.out.println("Betöltés");
+
+    public void loadTable() {
+
         ArrayList<Employee> employeeList = mainModel.getEmployeeList();
+
         for(Employee emp : employeeList) {
+
             Vector<String> row = new Vector<>();
+
             row.add(emp.id.toString());
             row.add(emp.name);
             row.add(emp.city);
             row.add(emp.salary.toString());
-            this.mainwindow.model.addRow(row);
+
+            this.mainWindow.tableModel.addRow(row);
         }
     }
 

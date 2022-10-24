@@ -14,8 +14,8 @@ public class MainWindow extends JFrame {
     public JButton exitButton; //exit button
     public JButton loadButton; //load button
 
-    public DefaultTableModel model = new DefaultTableModel();
-    public JTable table = new JTable(model);
+    public DefaultTableModel tableModel = new DefaultTableModel();
+    public JTable table = new JTable(tableModel);
     JScrollPane spanel = new JScrollPane(table);
 
     public MainWindow() {
@@ -26,7 +26,7 @@ public class MainWindow extends JFrame {
         this.buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
 
         Object[] felirat = {"Id", "Név", "Település", "Fizetés"};
-		model.setColumnIdentifiers(felirat);        
+		tableModel.setColumnIdentifiers(felirat);        
 
         this.buttonPanel.add(this.exitButton); //add exit button
         this.buttonPanel.add(this.loadButton); //add load button

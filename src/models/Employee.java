@@ -5,6 +5,7 @@ public class Employee {
     public String name;
     public String city;
     public Double salary;
+    
     public Employee(int id, String name, String city, double salary) {
         this.id = id;
         this.name = name;
