@@ -9,28 +9,31 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class MainWindow extends JFrame {
-    public JPanel buttonPanel; //button panel    
-    public JPanel tablePanel; //table panel    
-    public JButton exitButton; //exit button
-    public JButton loadButton; //load button
+    public JPanel buttonPanel;
+    public JPanel tablePanel;
+    public JButton exitButton;
+    public JButton loadButton; 
 
     public DefaultTableModel tableModel = new DefaultTableModel();
     public JTable table = new JTable(tableModel);
     JScrollPane spanel = new JScrollPane(table);
 
     public MainWindow() {
-        this.buttonPanel = new JPanel(); //init buttonPanel
-        this.tablePanel = new JPanel(); //init tablePanel
+        this.buttonPanel = new JPanel(); 
+        this.tablePanel = new JPanel();
+
         this.exitButton = new JButton("Kilépés");
         this.loadButton = new JButton("Betölt");
+
         this.buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
 
         Object[] felirat = {"Id", "Név", "Település", "Fizetés"};
 		tableModel.setColumnIdentifiers(felirat);        
 
-        this.buttonPanel.add(this.exitButton); //add exit button
-        this.buttonPanel.add(this.loadButton); //add load button
+        this.buttonPanel.add(this.exitButton); 
+        this.buttonPanel.add(this.loadButton);
         this.tablePanel.add(spanel);
+
         this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
         this.add(buttonPanel);
         this.add(tablePanel);
