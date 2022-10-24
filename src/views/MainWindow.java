@@ -9,31 +9,31 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class MainWindow extends JFrame {
-    public JPanel panel1; //button panel    
-    public JPanel panel2; //table panel    
-    public JButton a; //exit button
-    public JButton button2; //load button
+    public JPanel buttonPanel; //button panel    
+    public JPanel tablePanel; //table panel    
+    public JButton exitButton; //exit button
+    public JButton loadButton; //load button
 
     public DefaultTableModel model = new DefaultTableModel();
     public JTable table = new JTable(model);
     JScrollPane spanel = new JScrollPane(table);
 
     public MainWindow() {
-        this.panel1 = new JPanel(); //init panel1
-        this.panel2 = new JPanel(); //init panel2
-        this.a = new JButton("Kilépés");
-        this.button2 = new JButton("Betölt");
-        this.panel1.setLayout(new BoxLayout(panel1, BoxLayout.LINE_AXIS));
+        this.buttonPanel = new JPanel(); //init buttonPanel
+        this.tablePanel = new JPanel(); //init tablePanel
+        this.exitButton = new JButton("Kilépés");
+        this.loadButton = new JButton("Betölt");
+        this.buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
 
         Object[] felirat = {"Id", "Név", "Település", "Fizetés"};
 		model.setColumnIdentifiers(felirat);        
 
-        this.panel1.add(this.a); //add exit button
-        this.panel1.add(this.button2); //add load button
-        this.panel2.add(spanel);
+        this.buttonPanel.add(this.exitButton); //add exit button
+        this.buttonPanel.add(this.loadButton); //add load button
+        this.tablePanel.add(spanel);
         this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
-        this.add(panel1);
-        this.add(panel2);
+        this.add(buttonPanel);
+        this.add(tablePanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);

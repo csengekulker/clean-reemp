@@ -18,16 +18,17 @@ public class MainController {
     /* Itt kezeljük az eseményeket */
     public void handleEvent() {
         //Exit button
-        this.mainwindow.a
+        this.mainwindow.exitButton
         .addActionListener(e -> button1());
-        this.mainwindow.button2 //load button
-        .addActionListener(e -> button2());
+        this.mainwindow.loadButton //load button
+        .addActionListener(e -> loadButton());
     }
     /* Ez a kilépésgomb eseménykezelője */
     public void button1() {
         System.out.println("Kilépés...");
+        System.exit(0);
     }
-    public void button2() {
+    public void loadButton() {
         System.out.println("Betöltés");
         ArrayList<Employee> employeeList = mainModel.getEmployeeList();
         for(Employee emp : employeeList) {
