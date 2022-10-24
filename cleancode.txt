@@ -1,0 +1,13 @@
+Tiszta kód
+
+1)
+Elnevezések "panel1, panel2" nem beszédes
+
+2)
+Kilépés, betölt(és)
+
+3)
+gombok elnevezése: "a, button2" nem egyértelmű
+
+4)
+Kilépés gomb nem működik (?)
